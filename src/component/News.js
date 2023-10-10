@@ -57,6 +57,13 @@ constructor(props) {
       <div>
           <h3 className="text-center my-4">{`P.R.D. News - Top Headlines on ${this.props.category}`}</h3>
          
+        <InfiniteScroll
+          dataLength={this.state.articles.length}
+          next={this.fetchMoreData}
+          hasMore={this.state.articles.length !== this.state.totalResults}
+          loader={<h4 className="text-center">Loading...</h4>}
+        >
+
           <div className="container">
             <div className="row">
               {this.state.articles.map((element) => {
@@ -83,6 +90,7 @@ constructor(props) {
           </div>
         
 
+        </InfiniteScroll> 
 
 
       </div>
