@@ -27,7 +27,7 @@ constructor(props) {
  
   async updateNews(){ 
     this.props.setProgress(10);
-    let url =`https://newsapi.org/v2/top-headlines?domains=netlify.app&country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pagesize}`;
+    let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pagesize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
@@ -42,7 +42,7 @@ constructor(props) {
   }   
   
   fetchMoreData = async () => {
-    let url =`https://newsapi.org/v2/top-headlines?domains=netlify.app&country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pagesize}`;
+    let url =`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pagesize}`;
     let data = await fetch(url);
     let parseData = await data.json();
     this.setState({
