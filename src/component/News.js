@@ -3,6 +3,7 @@ import Newsitem from "./Newsitem";
 import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
 export class News extends Component {
+
 static defaultProps = {
   country: 'in',
   pagesize: 6,
@@ -55,12 +56,12 @@ constructor(props) {
     return (
       <div>
           <h3 className="text-center my-4">{`P.R.D. News - Top Headlines on ${this.props.category}`}</h3>
-            <InfiniteScroll
+            {/* <InfiniteScroll
             dataLength={this.state.articles.length}
             next={this.fetchMoreData}
             hasMore={this.state.articles.length !== this.state.totalResults}
             loader={<h4 className="text-center">Loading...</h4>}
-          >
+          > */}
           <div className="container">
             <div className="row">
               {this.state.articles.map((element) => {
@@ -85,7 +86,7 @@ constructor(props) {
               })}
             </div>
           </div>
-          </InfiniteScroll> 
+          {/* </InfiniteScroll>  */}
       </div>
     );
   }
